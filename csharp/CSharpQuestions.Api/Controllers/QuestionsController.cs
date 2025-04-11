@@ -5,7 +5,7 @@ using CSharpQuestions.Api.Exceptions;
 namespace CSharpQuestions.Api.Controllers
 {
   [ApiController]
-  [Route("api/[controller]")]
+  [Route("questions")]
   public class QuestionsController(TriangleAreaService _triangleAreaService, QuestionsService _questionsService, CheckLinksService _checkLinksService) : ControllerBase
   {
 
