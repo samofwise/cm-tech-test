@@ -1,6 +1,6 @@
 [![.NET Tests](https://github.com/samofwise/cm-tech-test/actions/workflows/dotnet-tests.yml/badge.svg)](https://github.com/samofwise/cm-tech-test/actions/workflows/dotnet-tests.yml)
 
-# Campaign Monitor Technical Test
+# [Campaign Monitor Technical Test](https://github.com/samofwise/cm-tech-test)
 
 ## Overview
 
