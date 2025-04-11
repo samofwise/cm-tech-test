@@ -1,10 +1,3 @@
-using System.Text.RegularExpressions;
-using System.Net.Http;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.Linq;
-using CSharpQuestions.Api.Exceptions;
-using System.ComponentModel.DataAnnotations;
 using System.Collections.Concurrent;
 
 namespace CSharpQuestions.Api.Services;
@@ -47,7 +40,7 @@ public class QuestionsService
     foreach (var bucketResult in bucketResults.Values)
     {
       lowDivisors.AddRange(bucketResult.lowDivisors);
-      highDivisors.AddRange(bucketResult.highDivisors);
+      highDivisors.InsertRange(0, bucketResult.highDivisors);
     }
 
     return [1, .. lowDivisors, .. highDivisors, number];

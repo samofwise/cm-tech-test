@@ -6,7 +6,7 @@ namespace CSharpQuestions.Api.Controllers
 {
   [ApiController]
   [Route("questions")]
-  public class QuestionsController(TriangleAreaService _triangleAreaService, QuestionsService _questionsService, CheckLinksService _checkLinksService) : ControllerBase
+  public class QuestionsController(TriangleAreaService _triangleAreaService, QuestionsService _questionsService, LinkCheckerService _linkCheckerService) : ControllerBase
   {
 
     [HttpGet("positive-divisors")]
@@ -51,7 +51,7 @@ namespace CSharpQuestions.Api.Controllers
     [HttpGet("link-checker")]
     public async Task<IActionResult> CheckLinks([FromBody] string htmlContent)
     {
-      // var results = await _checkLinksService.CheckLinks(htmlContent);
+      var results = await _linkCheckerService.CheckLinks(htmlContent);
       return Ok(results);
     }
   }

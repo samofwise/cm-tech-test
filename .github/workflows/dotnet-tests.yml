@@ -1,0 +1,40 @@
+name: Coding Challenge Tests
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+        
+    - name: Restore dependencies
+      run: dotnet restore csharp/CSharpQuestions.sln
+      
+    - name: Build
+      run: dotnet build csharp/CSharpQuestions.sln --no-restore
+      
+    - name: Test .NET
+      run: dotnet test csharp/CSharpQuestions.sln --no-build --verbosity normal
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+
+    - name: Install JavaScript dependencies
+      run: npm ci
+      working-directory: ./javascript
+
+    - name: Test JavaScript
+      run: npm test
+      working-directory: ./javascript

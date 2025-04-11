@@ -1,0 +1,24 @@
+-- Names of Salespeople who have an order with George
+SELECT DISTINCT sp.Name
+FROM Salesperson sp
+  JOIN [Order] o ON sp.SalespersonId = o.SalespersonId
+  JOIN Customer c ON o.CustomerId = c.CustomerId
+WHERE c.Name = 'George'
+
+
+-- Names of sales people that dont have order with George
+SELECT DISTINCT sp.Name
+FROM Salesperson sp
+  LEFT JOIN [Order] o ON sp.SalespersonId = o.SalespersonId
+  LEFT JOIN Customer c ON o.CustomerId = c.CustomerId AND c.Name = 'George'
+WHERE c.CustomerId IS NULL
+
+
+-- Names of sales people that have 2 or more orders
+SELECT sp.Name
+FROM Salesperson sp
+  LEFT JOIN [Order] o ON sp.SalespersonId = o.SalespersonId
+GROUP BY sp.SalespersonId, sp.Name
+HAVING COUNT(o.OrderId) >= 2
+
+

@@ -6,7 +6,7 @@ builder.Services.AddOpenApi();
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<QuestionsService>();
 builder.Services.AddScoped<TriangleAreaService>();
-builder.Services.AddScoped<CheckLinksService>();
+builder.Services.AddScoped<LinkCheckerService>();
 
 var app = builder.Build();
 

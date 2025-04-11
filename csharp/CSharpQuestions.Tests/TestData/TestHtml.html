@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test Page</title>
+  </head>
+  <body>
+    <p>
+      Regular paragraph with <a href="https://valid-link.com">valid link</a>
+    </p>
+
+    <ul>
+      <li><a href="https://another-valid.com">List item link</a></li>
+      <li><a href="https://invalid-link.com">Invalid link</a></li>
+    </ul>
+
+    <table>
+      <tr>
+        <td><a href="https://table-link.com">Table link</a></td>
+      </tr>
+    </table>
+
+    <div>
+      <a href="https://duplicate-link.com">First instance</a>
+      <a href="https://duplicate-link.com">Second instance</a>
+    </div>
+
+    <a href="https://different-case.com">Different case</a>
+    <a href="https://different-case.com">Different case uppercase</a>
+
+    <!-- Invalid links -->
+    <a>No href</a>
+    <a href="">Empty href</a>
+    <a href="not-a-url">Not a URL</a>
+    <a href="ftp://ftp.example.com">Not HTTP(S)</a>
+  </body>
+</html>

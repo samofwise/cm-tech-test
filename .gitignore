@@ -10,3 +10,6 @@ obj/
 # NuGet packages
 *.nupkg
 *.snupkg
+
+node_modules/
+**/node_modules/

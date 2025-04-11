@@ -5,17 +5,7 @@ namespace CSharpQuestions.Tests.Tests;
 
 public class MostCommonIntegersTests
 {
-  private readonly QuestionsService _service;
-
-  public MostCommonIntegersTests()
-  {
-    var services = new ServiceCollection();
-    services.AddHttpClient();
-    services.AddScoped<QuestionsService>();
-
-    var serviceProvider = services.BuildServiceProvider();
-    _service = serviceProvider.GetRequiredService<QuestionsService>();
-  }
+  private readonly QuestionsService _service = new();
 
   [Theory]
   // Examples from Spec
@@ -101,7 +91,7 @@ public class MostCommonIntegersTests
     var result = _service.GetMostCommonIntegers(input);
 
     // Assert
-    Assert.Equal([7], result);
+    Assert.Equal(new int[] { 7 }, result);
   }
 
   [Fact]
