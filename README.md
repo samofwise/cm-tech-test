@@ -8,7 +8,7 @@ This solution implements several questions from the Campaign Monitor technical t
 
 ## Working Time Spent
 
-2 hrs 28 min
+2 hrs 51 min
 
 ## Questions Implemented (Total: 9 points)
 
@@ -29,4 +29,3 @@ This solution implements several questions from the Campaign Monitor technical t
 ### Javascript
 - Question 7: Arrange By (2 points)
 
-## Technical Implementation
