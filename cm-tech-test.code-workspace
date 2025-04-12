@@ -1,8 +1,50 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {},
+  "launch": {
+    "configurations": [
+      {
+        "name": "Debug C# API",
+        "type": "coreclr",
+        "request": "launch",
+        "preLaunchTask": "build-api",
+        "program": "${workspaceFolder}/csharp/CSharpQuestions.Api/bin/Debug/net9.0/CSharpQuestions.Api.dll",
+        "args": [],
+        "cwd": "${workspaceFolder}/csharp/CSharpQuestions.Api",
+        "stopAtEntry": false,
+        "serverReadyAction": {
+          "action": "openExternally",
+          "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+        },
+        "env": {
+          "ASPNETCORE_ENVIRONMENT": "Development"
+        }
+      }
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "build-api",
+        "type": "shell",
+        "command": "dotnet",
+        "args": [
+          "build",
+          "csharp/CSharpQuestions.Api/CSharpQuestions.Api.csproj",
+          "/property:GenerateFullPaths=true",
+          "/consoleloggerparameters:NoSummary"
+        ],
+        "group": "build",
+        "presentation": {
+          "reveal": "silent"
+        },
+        "problemMatcher": "$msCompile"
+      }
+    ]
+  }
 }

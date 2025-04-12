@@ -30,7 +30,7 @@ namespace CSharpQuestions.Api.Controllers
       try
       {
         var area = _triangleAreaService.CalculateTriangleArea(first, second, third);
-        return Ok(new { area });
+        return Ok(area);
       }
       catch (InvalidTriangleException ex)
       {
